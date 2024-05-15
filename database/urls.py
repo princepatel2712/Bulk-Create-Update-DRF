@@ -1,7 +1,7 @@
-from .views import CarGenericView
+from .views import CreateCarView, UpdateCarView
 from django.urls import path
 
-
 urlpatterns = [
-    path('car/', CarGenericView.as_view(), name='car')
+    path('bulk-create/', CreateCarView.as_view(), name='bulk_create'),
+    path('bulk-update/<int:id>/', UpdateCarView.as_view(), name='bulk_update'),
 ]
